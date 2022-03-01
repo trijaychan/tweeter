@@ -21,7 +21,7 @@
 }
 
 .under-searchbox {
-  margin-top: 15px;
+  margin-top: 0.5em;
   display: flex;
   justify-content: space-between;
   font-family: "Bungee";
@@ -32,6 +32,10 @@
   background-color: #4056A1;
   color: white;
   padding: 5px 15px;
+}
+
+.under-searchbox button:hover{
+  box-shadow: 5px 5px #9b9892;
 }
 
 .under-searchbox output {
