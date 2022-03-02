@@ -1,4 +1,4 @@
-.searchbox {
+.textbox {
   width: 100%;
   height: 60px;
   background: none;
@@ -16,28 +16,28 @@
   font-weight: bold;
 }
 
-.searchbox::-webkit-input-placeholder {
+.textbox::-webkit-input-placeholder {
   color: #58544C;
 }
 
-.under-searchbox {
+.under-textbox {
   margin-top: 0.5em;
   display: flex;
   justify-content: space-between;
   font-family: "Bungee";
 }
 
-.under-searchbox button {
+.under-textbox button {
   border: none;
   background-color: #4056A1;
   color: white;
   padding: 5px 15px;
 }
 
-.under-searchbox button:hover{
+.under-textbox button:hover{
   box-shadow: 5px 5px #9b9892;
 }
 
-.under-searchbox output {
+.under-textbox output {
   margin-right: 1em;
 }
