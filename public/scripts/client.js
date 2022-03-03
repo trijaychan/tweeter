@@ -49,10 +49,17 @@ const loadTweets = () => {
     });
 };
 
-
 $(document).ready(function() {
   $(".error-popup").hide();
   loadTweets();
+
+
+
+  $("#write-new").click(function() {
+    $([document.documentElement, document.body]).animate({
+      scrollTop: $("br").offset().top - 120
+    }, 500);
+  });
 
   $("#compose-tweet").submit(function(event) {
     if (!$("#tweet-text").val()) {
