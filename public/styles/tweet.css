@@ -60,11 +60,11 @@ article hr {
   font-size: medium;
 }
 
-i {
+article i {
   color: #4056A1;
   margin: 0 0.25em;
 }
 
-i:hover {
+article i:hover {
   color:#D29637;
 }
