@@ -10,19 +10,25 @@ const renderTweets = (tweets) => {
   }
 };
 
+const escape = function(str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 const createTweetElement = (tweetInfo) => {
   let $tweet = $(`<article class="tweet">
                     <header>
                       <div class ="tweet-top">
                         <div class="user-info">
-                          <img src="${tweetInfo.user.avatars}"> 
-                          <p>${tweetInfo.user.name}</p>
+                          <img src="${escape(tweetInfo.user.avatars)}"> 
+                          <p>${escape(tweetInfo.user.name)}</p>
                         </div>
-                        <p><strong>${tweetInfo.content.text}</strong></p>
+                        <p><strong>${escape(tweetInfo.content.text)}</strong></p>
                       </div>
                       <hr>
                       <div class="tweet-bottom">
-                        <p><strong>${timeago.format(tweetInfo.created_at)}</strong></p>
+                        <p><strong>${timeago.format(escape(tweetInfo.created_at))}</strong></p>
                         <div>
                           <i class="fa-solid fa-flag fa-xs"></i>
                           <i class="fa-solid fa-retweet fa-xs"></i>
