@@ -20,6 +20,21 @@
   color: #58544C;
 }
 
+.error-popup {
+  display: flex;
+  align-items: center;
+}
+
+.new-tweet p {
+  color: red;
+  font-weight: bold;
+  margin: 1em 0;
+}
+
+.new-tweet i {
+  color: red;
+}
+
 .under-textbox {
   margin-top: 0.5em;
   display: flex;
