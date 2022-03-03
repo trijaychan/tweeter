@@ -43,7 +43,7 @@ const createTweetElement = (tweetInfo) => {
 };
 
 const loadTweets = () => {
-  $.ajax("/tweets/", { method: "GET" })
+  $.get("/tweets/")
     .then((data) => {
       renderTweets(data);
     });
@@ -63,11 +63,13 @@ $(document).ready(function() {
       $(".error-popup").show();
     } else {
       $(".error-popup").hide();
-      $.post("/tweets/", $(this).serialize());
-      $.ajax("/tweets/", { method: "GET" })
-      .then((data) => {
-        renderTweets(data.slice(-1));
-      });
+      $.post("/tweets/", $(this).serialize())
+        .then (() => {
+          $.get("/tweets/")
+            .then((data) => {
+              renderTweets(data.slice(-1));
+            });
+        })
     }
 
     event.preventDefault();
