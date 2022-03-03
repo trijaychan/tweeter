@@ -24,11 +24,11 @@ const createTweetElement = (tweetInfo) => {
                           <img src="${escape(tweetInfo.user.avatars)}"> 
                           <p>${escape(tweetInfo.user.name)}</p>
                         </div>
-                        <p><strong>${escape(tweetInfo.content.text)}</strong></p>
+                        <p>${escape(tweetInfo.content.text)}</p>
                       </div>
                       <hr>
                       <div class="tweet-bottom">
-                        <p><strong>${timeago.format(escape(tweetInfo.created_at))}</strong></p>
+                        <p>${timeago.format(escape(tweetInfo.created_at))}</p>
                         <div>
                           <i class="fa-solid fa-flag fa-xs"></i>
                           <i class="fa-solid fa-retweet fa-xs"></i>
@@ -51,14 +51,18 @@ const loadTweets = () => {
 
 
 $(document).ready(function() {
+  $(".error-popup").hide();
   loadTweets();
 
   $("#compose-tweet").submit(function(event) {
     if (!$("#tweet-text").val()) {
-      alert("Please enter a valid tweet!");
+      $("#error-text").html("Please enter a valid tweet");
+      $(".error-popup").show();
     } else if ($("#tweet-text").val().length > 140) {
-      alert("Please enter a shorter tweet!");
+      $("#error-text").html("Please enter a shorter tweet");
+      $(".error-popup").show();
     } else {
+      $(".error-popup").hide();
       $.post("/tweets/", $(this).serialize());
       $.ajax("/tweets/", { method: "GET" })
       .then((data) => {
