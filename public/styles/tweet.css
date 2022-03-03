@@ -9,6 +9,7 @@ article.tweet {
 article p {
   margin-left: 0;
   margin-right: 0;
+  font-weight: bold;
 }
 
 article:hover{
@@ -28,6 +29,10 @@ article.tweet header {
   margin-top: 0.5em;
   display: flex;
   align-items: center;
+}
+
+.user-info p {
+  font-weight: lighter;
 }
 
 .tweet-top p {
