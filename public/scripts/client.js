@@ -35,6 +35,7 @@ const createTweetElement = (tweetInfo) => {
 
   return $tweet;
 };
+
 const loadTweets = () => {
   $.ajax("/tweets/", { method: "GET" })
     .then((data) => {
@@ -47,12 +48,16 @@ $(document).ready(function() {
   loadTweets();
 
   $("#compose-tweet").submit(function(event) {
-    const input = "";
-
-    if (!input) {
+    if (!$("#tweet-text").val()) {
       alert("Please enter a valid tweet!");
+    } else if ($("#tweet-text").val().length > 140) {
+      alert("Please enter a shorter tweet!");
     } else {
       $.post("/tweets/", $(this).serialize());
+      $.ajax("/tweets/", { method: "GET" })
+      .then((data) => {
+        renderTweets(data.slice(-1));
+      });
     }
 
     event.preventDefault();
