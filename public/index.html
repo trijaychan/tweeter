@@ -7,6 +7,7 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,10 +23,12 @@
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="./scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="./scripts/client.js"></script>
   </head>
 
   <body>
@@ -52,37 +55,16 @@
     <!-- main content -->
     <main class="container">
       <section>
-        <form method="post" action="/tweets/">
-          <textarea class="searchbox" name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-          <div class="under-searchbox">
+        <form id="compose-tweet" method="post" action="/tweets/">
+          <textarea class="textbox" name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+          <div class="under-textbox">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
       <br>
-      <section>
-        <article class="tweet">
-          <header>
-            <div class ="tweet-top">
-              <div class="user-info">
-                <img src="/images/profile-hex.png" style="height: 75px;"> 
-                <p>Tristan Domingo</p>
-              </div>
-              <p><strong>Tweet</strong></p>
-            </div>
-            <hr>
-            <div class="tweet-bottom">
-              <p><strong>10 days ago</strong></p>
-              <div>
-                <i class="fa-solid fa-flag fa-xs"></i>
-                <i class="fa-solid fa-retweet fa-xs"></i>
-                <i class="fa-solid fa-heart fa-xs"></i>
-              </div>
-            </div>
-          </header>
-        </article>
-      </section>
+      <section id="tweets-container"></section>
     </main>
   </body>
 </html>
