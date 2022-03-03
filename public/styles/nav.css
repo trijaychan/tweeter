@@ -6,6 +6,8 @@
   width: 100%;
   background-color: #4056A1;
   color: white;
+  position: fixed;
+  top: 0;
 }
 
 .navbar span {
@@ -27,4 +29,12 @@ p {
   line-height: 0;
   margin-left: 1.5em;
   margin-right: 1.5em;
+}
+
+.navbar button {
+  color: white;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
 }
