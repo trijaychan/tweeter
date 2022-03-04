@@ -6,7 +6,7 @@
 
 const renderTweets = (tweets) => {
   for (const tweet of tweets) {
-    $("#tweets-container").append(createTweetElement(tweet));
+    $("#tweets-container").prepend(createTweetElement(tweet));
   }
 };
 
@@ -45,7 +45,7 @@ const createTweetElement = (tweetInfo) => {
 const loadTweets = () => {
   $.get("/tweets/")
     .then((data) => {
-      renderTweets(data.reverse());
+      renderTweets(data);
     });
 };
 
