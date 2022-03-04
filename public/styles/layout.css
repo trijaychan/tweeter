@@ -31,3 +31,31 @@ main {
   margin-left: 5%;
   margin-right: 5%;
 }
+
+@media only screen and (max-width: 1024px) {
+  .navbar {
+    background-color: none;
+  }
+  
+  main {
+    margin-top: 1em;
+  }
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  .user-header {
+    max-width: 22%;
+    float: left;
+    margin: 0 5.65%;
+    margin-top: 175px;
+  }
+
+  main {
+    max-width: 66.7%;
+    width: 60%;
+    float: right;
+    margin: 0 3.35%;
+    margin-top: 175px;
+  }
+}
