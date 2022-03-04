@@ -53,9 +53,7 @@ $(document).ready(function() {
   $(".error-popup").hide();
   loadTweets();
 
-
-
-  $("#write-new").click(function() {
+  $("#scroll-to-compose").click(function() {
     $([document.documentElement, document.body]).animate({
       scrollTop: $("br").offset().top - 120
     }, 500);
