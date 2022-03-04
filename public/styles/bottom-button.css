@@ -1,0 +1,16 @@
+.bottom-button {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 0.5em;
+  border: none;
+  color: white;
+  background-color: #ccd6dd;
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+}
+
+.bottom-button:hover {
+  background-color: #acbdc9;
+}
