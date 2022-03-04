@@ -53,18 +53,6 @@ $(document).ready(function() {
   $(".error-popup").hide();
   loadTweets();
 
-  $("#scroll-to-compose").click(function() {
-    $([document.documentElement, document.body]).animate({
-      scrollTop: $(".new-tweet").offset().top - 150
-    }, 500);
-    $("#tweet-text").focus();
-    $("#scroll-to-compose").hide();
-  });
-
-  $("#tweet-text").focusout(function() {
-    $("#scroll-to-compose").show();
-  });
-
   $("#compose-tweet").submit(function(event) {
     if (!$("#tweet-text").val()) {
       $("#error-text").html("Please enter a valid tweet");
