@@ -55,14 +55,14 @@
     <main>
       <section class="new-tweet">
         <form id="compose-tweet" method="post" action="/tweets/">
-          <textarea class="textbox" name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+          <textarea class="tweet-input" name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div class="error-popup">
             <i class="fa-solid fa-triangle-exclamation fa-lg"></i>
-            <p class="error" id="error-text">Error</p>
+            <p id="error-text"></p>
           </div>
-          <div class="under-textbox">
+          <div class="under-tweet-input">
             <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+            <output name="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
