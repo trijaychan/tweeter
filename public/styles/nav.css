@@ -1,4 +1,4 @@
-.navbar {
+nav {
   display: flex;
   justify-content: space-between;
   height: 120px;
@@ -8,7 +8,7 @@
   top: 0;
 }
 
-.navbar span {
+nav span {
   display: flex;
   align-items: center;
   font-family: "Bungee";
@@ -23,16 +23,20 @@
   align-items: center;
 }
 
-p {
+nav p {
   line-height: 0;
   margin-left: 1.5em;
   margin-right: 1.5em;
 }
 
-.navbar button {
+nav button {
   color: white;
   border: none;
   background: none;
   padding: 0;
   margin: 0;
+}
+
+nav button:hover {
+  color: #d5e0e7;
 }

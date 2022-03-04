@@ -45,7 +45,7 @@ const createTweetElement = (tweetInfo) => {
 const loadTweets = () => {
   $.get("/tweets/")
     .then((data) => {
-      renderTweets(data);
+      renderTweets(data.reverse());
     });
 };
 
@@ -57,6 +57,12 @@ $(document).ready(function() {
     $([document.documentElement, document.body]).animate({
       scrollTop: $(".new-tweet").offset().top - 150
     }, 500);
+    $("#tweet-text").focus();
+    $("#scroll-to-compose").hide();
+  });
+
+  $("#tweet-text").focusout(function() {
+    $("#scroll-to-compose").show();
   });
 
   $("#compose-tweet").submit(function(event) {
