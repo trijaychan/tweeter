@@ -55,7 +55,7 @@ $(document).ready(function() {
 
   $("#scroll-to-compose").click(function() {
     $([document.documentElement, document.body]).animate({
-      scrollTop: $("br").offset().top - 120
+      scrollTop: $(".new-tweet").offset().top - 150
     }, 500);
   });
 
