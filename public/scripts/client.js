@@ -17,12 +17,15 @@ const escape = function(str) {
 };
 
 const createTweetElement = (tweetInfo) => {
-  let $tweet = $(`<article class="tweet">
+  let $tweet = $(`<article>
                     <header>
-                      <div class ="tweet-top">
+                      <div class="tweet-top">
                         <div class="user-info">
-                          <img src="${escape(tweetInfo.user.avatars)}"> 
-                          <p>${escape(tweetInfo.user.name)}</p>
+                          <div>
+                            <img src="${escape(tweetInfo.user.avatars)}"> 
+                            <p>${escape(tweetInfo.user.name)}</p>
+                          </div>
+                          <p>${escape(tweetInfo.user.handle)}</p>
                         </div>
                         <p>${escape(tweetInfo.content.text)}</p>
                       </div>
