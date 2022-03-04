@@ -5,17 +5,21 @@
  */
 
 const renderTweets = (tweets) => {
+  // for loop that runs for each tweet element there is in tweets
   for (const tweet of tweets) {
+    // prepends so that tweets appear in reverse chronological order
     $("#tweets-container").prepend(createTweetElement(tweet));
   }
 };
 
+// function to prevent XSS through tweet submission
 const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
+// creates a tweet element with user info using string interpolation
 const createTweetElement = (tweetInfo) => {
   let $tweet = $(`<article>
                     <header>
@@ -45,6 +49,8 @@ const createTweetElement = (tweetInfo) => {
   return $tweet;
 };
 
+// uses ajax to perform an http get request and uses the
+// response for creating and rendering the tweets
 const loadTweets = () => {
   $.get("/tweets/")
     .then((data) => {
@@ -52,28 +58,34 @@ const loadTweets = () => {
     });
 };
 
+//  when web page is done loading
 $(document).ready(function() {
-  $(".error-popup").hide();
-  loadTweets();
+  loadTweets(); // loads tweets from database
+  $(".error-popup").hide(); // div containing error message and icon
 
+  // when a new tweet is submitted
   $("#compose-tweet").submit(function(event) {
-    if (!$("#tweet-text").val()) {
+    if (!$("#tweet-text").val()) { // if textarea is empty
+      // sets html of error message and shows it through jquery
       $("#error-text").html("Please enter a valid tweet");
       $(".error-popup").show();
-    } else if ($("#tweet-text").val().length > 140) {
+    } else if ($("#tweet-text").val().length > 140) { // if tweet exceeds 140 chars
       $("#error-text").html("Please enter a shorter tweet");
       $(".error-popup").show();
     } else {
-      $(".error-popup").hide();
+      $(".error-popup").hide(); // hides incase user made error before
+
+      // sends information about new tweet to database then renders it
+      // onto the feed
       $.post("/tweets/", $(this).serialize())
-        .then (() => {
+        .then(() => {
           $.get("/tweets/")
             .then((data) => {
-              renderTweets(data.slice(-1));
+              renderTweets(data.slice(-1)); // we only want to render the new tweet
             });
-        })
+        });
     }
 
-    event.preventDefault();
+    event.preventDefault(); // returns false
   });
 });
