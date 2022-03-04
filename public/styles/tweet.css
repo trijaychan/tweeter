@@ -1,4 +1,4 @@
-article.tweet {
+article {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,16 +7,14 @@ article.tweet {
 }
 
 article p {
-  margin-left: 0;
-  margin-right: 0;
   font-weight: bold;
 }
 
-article:hover{
+article:hover {
   box-shadow: 5px 5px #9b9892;
 }
 
-article.tweet header {
+article header {
   width: 97.5%;
 }
 
