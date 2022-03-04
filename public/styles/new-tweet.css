@@ -1,4 +1,4 @@
-.textbox {
+.tweet-input {
   width: 100%;
   height: 60px;
   background: none;
@@ -16,43 +16,39 @@
   font-weight: bold;
 }
 
-.textbox::-webkit-input-placeholder {
+.tweet-input::-webkit-input-placeholder {
   color: #58544C;
 }
 
 .error-popup {
   display: flex;
   align-items: center;
-}
-
-.new-tweet p {
   color: red;
   font-weight: bold;
-  margin: 1em 0;
 }
 
-.new-tweet i {
-  color: red;
+.error-popup p {
+  margin: 0.5em 0.5em;
 }
 
-.under-textbox {
+.under-tweet-input {
   margin-top: 0.5em;
   display: flex;
   justify-content: space-between;
   font-family: "Bungee";
 }
 
-.under-textbox button {
+.under-tweet-input button {
   border: none;
   background-color: #4056A1;
   color: white;
   padding: 5px 15px;
 }
 
-.under-textbox button:hover{
+.under-tweet-input button:hover{
   box-shadow: 5px 5px #9b9892;
 }
 
-.under-textbox output {
+.under-tweet-input output {
   margin-right: 1em;
 }
