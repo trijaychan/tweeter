@@ -24,20 +24,32 @@ article header {
   flex-direction: column;
 }
 
-.tweet-top .user-info {
+.user-info {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.user-info div {
+  display: flex;
+  align-items: center;
+}
+
+.user-info div p {
+  margin: 0 0.5em;
+  font-weight: lighter;
+  color:#58544C;
+}
+
+.user-info p {
+  margin: 0 0.5em;
+  color:grey;
 }
 
 .tweet-top p {
   margin: 0;
   margin-top: 1em;
   line-height: 1em;
-}
-
-.user-info p {
-  margin: 0 0.5em;
-  font-weight: lighter;
 }
 
 article hr {
