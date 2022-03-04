@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/bottom-button.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -29,6 +30,7 @@
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="./scripts/composer-char-counter.js"></script>
     <script type="text/javascript" src="./scripts/client.js"></script>
+    <script type="text/javascript" src="./scripts/composer.js"></script>
   </head>
 
   <body>
@@ -38,24 +40,19 @@
         <h2>tweeter</h2>
       </span>
       <div class="right-content">
-        <button id="write-new">
+        <button id="scroll-to-compose">
           <p><strong>Write</strong> a new tweet</p>
           <i class="fa-solid fa-angles-down"></i>
         </button>
       </div>
     </nav>
     <!-- header -->
-    <header class="header">
-      <div class="avatar">
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <div class="name">
-          <p><strong>Amy</strong> Mansell</p>
-      </div>
+    <header class="user-header">
+      <img src="/images/profile-hex.png"> 
+      <p><strong>Amy</strong> Mansell</p>
     </header>
-    <br>
     <!-- main content -->
-    <main class="container">
+    <main>
       <section class="new-tweet">
         <form id="compose-tweet" method="post" action="/tweets/">
           <textarea class="textbox" name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
@@ -71,6 +68,9 @@
       </section>
       <br>
       <section id="tweets-container"></section>
+      <button class="bottom-button" id="scroll-to-top">
+        <i class="fa-solid fa-angles-up fa-2x"></i>
+      </button>
     </main>
   </body>
 </html>
