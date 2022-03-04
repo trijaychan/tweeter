@@ -33,7 +33,7 @@ main {
 }
 
 @media only screen and (min-width: 390px) {
-  .navbar {
+  nav {
     background-color: #acbecc;
     background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   }
@@ -45,7 +45,6 @@ main {
   .user-header img {
     margin-top: 120px;
   }
-
   
   main {
     margin-top: 1em;
@@ -54,7 +53,7 @@ main {
 
 /* Desktop styles */
 @media only screen and (min-width: 1024px) {
-  .navbar {
+  nav {
     background-color: #4056A1;
     background-image: none;
   }
@@ -64,19 +63,18 @@ main {
     height: auto;
     float: left;
     margin: 0 7.5%;
-    margin-top: 200px;
+    margin-top: 150px;
   }
 
   .user-header img {
     margin-top: 2em;
   }
 
-
   main {
     max-width: 60%;
     width: 50%;
     float: right;
     margin: 0 5%;
-    margin-top: 200px;
+    margin-top: 150px;
   }
 }
