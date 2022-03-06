@@ -8,6 +8,7 @@ article {
 
 article p {
   font-weight: bold;
+  word-wrap: break-word;
 }
 
 article:hover {
