@@ -1,3 +1,11 @@
+// function that scrolls to the given coord from the top
+// during 5 seconds
+function setPositionFromTop(fromTop) {
+  $([document.documentElement, document.body]).animate({
+    scrollTop: fromTop
+  }, 500);
+};
+
 $(document).ready(function() {
   // defaultly hidden
   $(".error-popup").hide();
@@ -6,9 +14,7 @@ $(document).ready(function() {
   // when nav button is clicked
   $("#scroll-to-compose").click(function() {
     // aligns the top of the tweet form to the bottom of the nav
-    $([document.documentElement, document.body]).animate({
-      scrollTop: $(".new-tweet").offset().top - 150
-    }, 500);
+    setPositionFromTop($(".new-tweet").offset().top - 150);
     $("#tweet-text").focus(); // focuses onto textarea
     $("#scroll-to-compose").hide(); // hides nav button
   });
@@ -30,9 +36,7 @@ $(document).ready(function() {
   // when bottom right button is clicked
   $("#scroll-to-top").click(function() {
     // scrolls all the way to the top
-    $([document.documentElement, document.body]).animate({
-      scrollTop: 0
-    }, 500);
+    setPositionFromTop(0);
   });
 
   // whenever keyup happens with textarea in focus
