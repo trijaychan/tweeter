@@ -54,6 +54,7 @@ const createTweetElement = (tweetInfo) => {
 const loadTweets = () => {
   $.get("/tweets/")
     .then((data) => {
+      console.log(data);
       renderTweets(data);
     });
 };
@@ -74,16 +75,20 @@ $(document).ready(function() {
       $(".error-popup").show();
     } else {
       $(".error-popup").hide(); // hides incase user made error before
-
       // sends information about new tweet to database then renders it
       // onto the feed
       $.post("/tweets/", $(this).serialize())
         .then(() => {
           $.get("/tweets/")
             .then((data) => {
+              console.log(data);
               renderTweets(data.slice(-1)); // we only want to render the new tweet
             });
         });
+      
+      // resets dynamic components of composer
+      $("#tweet-text").val("");
+      $("output[for='tweet-text']").html(140);
     }
 
     event.preventDefault(); // returns false
