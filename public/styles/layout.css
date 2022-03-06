@@ -53,6 +53,10 @@ main {
 
 /* Desktop styles */
 @media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+  }
+  
   nav {
     background-color: #4056A1;
     background-image: none;
@@ -60,8 +64,7 @@ main {
 
   .user-header {
     max-width: 25%;
-    height: auto;
-    float: left;
+    height: 400px;
     margin: 0 7.5%;
     margin-top: 150px;
   }
@@ -73,7 +76,6 @@ main {
   main {
     max-width: 60%;
     width: 50%;
-    float: right;
     margin: 0 5%;
     margin-top: 150px;
   }
